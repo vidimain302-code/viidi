@@ -1,0 +1,89 @@
+/* assets/css/style.css — tampilan utama aplikasi (sidebar, kartu, tabel, login) */
+:root{
+  --ims-navy:#0f2540;
+  --ims-navy-soft:#16324f;
+  --ims-teal:#0ea5a4;
+  --ims-teal-dark:#0b8483;
+  --ims-bg:#f4f6fa;
+  --ims-text:#1f2937;
+  --ims-muted:#6b7280;
+  --ims-border:#e5e8ef;
+  --ims-radius:14px;
+  --ims-shadow:0 8px 24px rgba(16,36,64,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ims-bg);color:var(--ims-text);font-family:"Segoe UI",system-ui,-apple-system,sans-serif;font-size:15px}
+a{text-decoration:none}
+
+/* ---------- Layout ---------- */
+.app-wrapper{display:flex;min-height:100vh}
+.sidebar{width:260px;background:linear-gradient(180deg,var(--ims-navy),var(--ims-navy-soft));color:#cbd5e1;position:fixed;inset:0 auto 0 0;padding:18px 14px;overflow-y:auto;z-index:1040;transition:transform .25s ease}
+.sidebar-brand{display:flex;align-items:center;gap:12px;color:#fff;padding:8px 10px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:14px}
+.sidebar-brand i{font-size:28px;color:var(--ims-teal)}
+.brand-title{display:block;font-weight:700;letter-spacing:1px}
+.brand-sub{color:#93a3b8;font-size:11px}
+.menu-item{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:10px;color:#cbd5e1;font-size:14.5px;margin-bottom:4px;transition:.18s}
+.menu-item i{font-size:17px}
+.menu-item:hover{background:rgba(255,255,255,.08);color:#fff}
+.menu-item.active{background:var(--ims-teal);color:#fff;box-shadow:0 6px 16px rgba(14,165,164,.35)}
+.menu-logout{margin-top:14px;color:#fca5a5}
+.menu-logout:hover{background:rgba(248,113,113,.15);color:#fecaca}
+.main-area{margin-left:260px;flex:1;display:flex;flex-direction:column;min-width:0}
+.topbar{background:#fff;border-bottom:1px solid var(--ims-border);padding:14px 22px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:1020}
+.topbar-title{font-size:19px;font-weight:600;margin:0;flex:1}
+.topbar-user{display:flex;align-items:center;gap:10px}
+.user-name{font-weight:600;font-size:14px;line-height:1.1}
+.user-role{font-size:12px;color:var(--ims-muted)}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--ims-teal);color:#fff;display:grid;place-items:center;font-weight:700}
+.content{padding:24px;flex:1}
+.app-footer{padding:16px 24px;color:var(--ims-muted);font-size:13px;border-top:1px solid var(--ims-border);background:#fff}
+.sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(15,37,64,.45);z-index:1035}
+.sidebar-backdrop.show{display:block}
+
+/* ---------- Kartu & tabel ---------- */
+.card-ims{background:#fff;border:1px solid var(--ims-border);border-radius:var(--ims-radius);box-shadow:var(--ims-shadow);padding:20px;height:100%}
+.card-ims .card-title{font-size:15px;font-weight:600;margin-bottom:14px}
+.stat-card{display:flex;align-items:center;gap:14px}
+.stat-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:23px;color:#fff;flex:none}
+.bg-navy{background:var(--ims-navy)}.bg-teal{background:var(--ims-teal)}.bg-amber{background:#f59e0b}
+.bg-green{background:#16a34a}.bg-red{background:#dc2626}.bg-violet{background:#6366f1}
+.stat-value{font-size:24px;font-weight:700;line-height:1.1}
+.stat-label{font-size:13px;color:var(--ims-muted)}
+.table-ims{width:100%;border-collapse:separate;border-spacing:0;background:#fff;font-size:14px}
+.table-ims thead th{background:#f8fafc;color:#475569;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.4px;padding:12px;border-bottom:1px solid var(--ims-border);white-space:nowrap}
+.table-ims tbody td{padding:12px;border-bottom:1px solid #f1f3f8;vertical-align:middle}
+.table-ims tbody tr:hover{background:#f9fbff}
+.table-wrap{overflow-x:auto;border:1px solid var(--ims-border);border-radius:var(--ims-radius);background:#fff;box-shadow:var(--ims-shadow)}
+.badge-soft{padding:5px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.badge-success{background:#dcfce7;color:#166534}
+.badge-warning{background:#fef3c7;color:#92400e}
+.badge-danger{background:#fee2e2;color:#991b1b}
+.badge-info{background:#dbeafe;color:#1e40af}
+.btn-teal{background:var(--ims-teal);border-color:var(--ims-teal);color:#fff}
+.btn-teal:hover{background:var(--ims-teal-dark);border-color:var(--ims-teal-dark);color:#fff}
+.page-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.form-label{font-weight:600;font-size:13.5px}
+
+/* ---------- Halaman login ---------- */
+.login-page{min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,var(--ims-navy),#0b8483);padding:20px}
+.login-card{width:100%;max-width:410px;background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(4,18,36,.35);padding:34px}
+.login-logo{width:62px;height:62px;border-radius:18px;background:var(--ims-navy);color:var(--ims-teal);display:grid;place-items:center;font-size:30px;margin:0 auto 14px}
+.login-card h1{font-size:20px;font-weight:700;text-align:center;margin-bottom:4px}
+.login-card p.sub{text-align:center;color:var(--ims-muted);font-size:13.5px;margin-bottom:22px}
+.login-hint{margin-top:18px;background:#f4f6fa;border:1px dashed var(--ims-border);border-radius:12px;padding:12px;font-size:12.5px;color:var(--ims-muted)}
+
+/* ---------- Cetak ---------- */
+@media print{
+  .sidebar,.topbar,.app-footer,.no-print{display:none!important}
+  .main-area{margin:0}.content{padding:0}
+  .table-wrap{box-shadow:none;border:none}
+  .table-ims thead th{background:#eee!important;-webkit-print-color-adjust:exact}
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width:991.98px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.show{transform:translateX(0)}
+  .main-area{margin-left:0}
+  .content{padding:16px}
+}
